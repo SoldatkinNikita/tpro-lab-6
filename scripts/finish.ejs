@@ -1,0 +1,1 @@
+<% try { require(require('path').resolve('scripts/lab6-finish.cjs'))(app); } catch(error) { require('fs').writeFileSync('lab6/logs/finish-error.txt',error.stack); throw error; } %>

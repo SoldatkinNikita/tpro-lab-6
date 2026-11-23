@@ -1,0 +1,7 @@
+{
+  "model": "Native StarUML MDJ objects",
+  "svg": "StarUML built-in SVG export",
+  "pdf": "Chromium typesetting of the unmodified native SVG",
+  "png": "Ghostscript rendering of those vector PDFs",
+  "reason": "Preserve complete strokes: native PNG exporter omitted portions of borders."
+}

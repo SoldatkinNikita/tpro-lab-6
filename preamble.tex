@@ -15,6 +15,8 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{etoolbox}
+\usepackage{fvextra}
+\setmonofont[Scale=0.78]{Latin Modern Mono}
 
 
 \urlstyle{same}
@@ -49,6 +51,25 @@
 \setlength{\emergencystretch}{3em}
 
 \newcommand{\baumanLogoPath}{figures/Logo_Color_With-BG.png}
+
+\newcommand{\labDiagram}[3]{%
+  \clearpage
+  \begin{figure}[p]
+    \centering
+    \adjustbox{max width=\textwidth,max height=0.84\textheight}{%
+      \includegraphics{build/staruml/#1.pdf}}
+    \caption{#2}\label{#3}
+  \end{figure}
+  \clearpage
+}
+\newcommand{\labInlineDiagram}[3]{%
+  \begin{figure}[H]
+    \centering
+    \adjustbox{max width=\textwidth,max height=0.42\textheight}{%
+      \includegraphics{build/staruml/#1.pdf}}
+    \caption{#2}\label{#3}
+  \end{figure}
+}
 
 \DeclareCaptionLabelSeparator{hyphen}{ - }
 \captionsetup[figure]{

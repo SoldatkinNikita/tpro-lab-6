@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "pdfPages": 36,
+  "pdfSHA256": "d7fa4c0682a3733ee9c0f1aeb8dd02b45ca68bc8655e93675bdbe61d1ee0dc32",
+  "distributionMatchesBuild": true,
+  "renderedPages": 36,
+  "latexOverflows": 0,
+  "unresolvedReferences": 0,
+  "pythonSyntax": {
+    "version": "3.13.11",
+    "files": 2,
+    "status": "passed"
+  },
+  "visualReview": "All page contact sheets reviewed; corrected ER audio table page inspected separately."
+}

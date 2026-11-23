@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "server": "postgres (PostgreSQL) 18.1",
+  "isolatedCluster": true,
+  "tables": 12,
+  "expectedConstraintFailures": 18,
+  "positiveChecks": [
+    "valid inserts",
+    "audio/file/tag join",
+    "terminal status",
+    "cascade deletion",
+    "deferred 1:1 checks"
+  ]
+}

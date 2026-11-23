@@ -1,0 +1,1 @@
+Final native StarUML model: 18 new diagrams, 12 tables, 7 imported Python classes. Native validation, AST comparison and PostgreSQL verification passed. SVG is exported by StarUML; PDF/PNG typesetting is recorded in diagrams/rendering.json.

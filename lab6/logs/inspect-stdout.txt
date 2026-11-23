@@ -1,0 +1,3 @@
+
+[StarUML] D:\MyDesktop\Учеба\магистратура\ТРПО\лабы\lab-6\lab6\logs\inspect.txt
+[StarUML] Total 1 files were generated

@@ -1,0 +1,109 @@
+{
+  "counting": "Exact persisted _type values; views excluded. Packages and subsystems counted separately. Source copies of classes in distinct packages counted separately.",
+  "source": {
+    "packages": 43,
+    "subsystems": 0,
+    "diagrams": 21,
+    "umlClasses": 140,
+    "relationships": 368,
+    "logicalEntities": 0,
+    "tables": 0
+  },
+  "total": {
+    "packages": 51,
+    "subsystems": 8,
+    "diagrams": 39,
+    "umlClasses": 175,
+    "relationships": 446,
+    "logicalEntities": 10,
+    "tables": 12
+  },
+  "lab6": {
+    "packages": 8,
+    "subsystems": 8,
+    "diagrams": 18,
+    "umlClasses": 35,
+    "relationships": 78,
+    "logicalEntities": 10,
+    "tables": 12
+  },
+  "canonicalAnalysis": {
+    "Boundary": 11,
+    "Control": 7,
+    "Entity": 10
+  },
+  "diagrams": [
+    {
+      "id": "AAAAAAGiCd6rS3ayhLw=",
+      "name": "22. Граничные классы — формы"
+    },
+    {
+      "id": "AAAAAAGiCd6tZHp7uOE=",
+      "name": "23. Граничные классы — адаптеры"
+    },
+    {
+      "id": "AAAAAAGiCd6uNXu/d24=",
+      "name": "24. Управляющие классы — проектирование"
+    },
+    {
+      "id": "AAAAAAGiCd6wAn8uIzU=",
+      "name": "25. Пакеты анализа — подсистемы"
+    },
+    {
+      "id": "AAAAAAGiCd6xq4ExTgY=",
+      "name": "26. Проектные классы — анализ и поиск"
+    },
+    {
+      "id": "AAAAAAGiCd6x34E0nEw=",
+      "name": "27. Проектные классы — задания, параметры и вход"
+    },
+    {
+      "id": "AAAAAAGiCd6yY4J4Q/U=",
+      "name": "28. Инфологическая модель — аудиозаписи"
+    },
+    {
+      "id": "AAAAAAGiCd6ynYJ7NX4=",
+      "name": "29. Инфологическая модель — задания и оценки"
+    },
+    {
+      "id": "AAAAAAGiCd7IZIja4cI=",
+      "name": "30. Даталогическая модель — аудиозаписи"
+    },
+    {
+      "id": "AAAAAAGiCd7Ir4jvyjM=",
+      "name": "31. Даталогическая модель — модели и параметры"
+    },
+    {
+      "id": "AAAAAAGiCd7LeIrHbIc=",
+      "name": "32. Сущности анализа — инфологическая модель"
+    },
+    {
+      "id": "AAAAAAGiCd7OSo+/nKo=",
+      "name": "33. Инфологическая модель — таблицы"
+    },
+    {
+      "id": "AAAAAAGiCd7RFZOAuec=",
+      "name": "34. Физическая структура хранения"
+    },
+    {
+      "id": "AAAAAAGiCd7SfpQoBko=",
+      "name": "35. Структура проекта базы данных"
+    },
+    {
+      "id": "AAAAAAGiCd7TYpSUfno=",
+      "name": "36. Зависимости подсистем ARIA"
+    },
+    {
+      "id": "AAAAAAGiCd7/iG71ZFA=",
+      "name": "37. Даталогическая модель — задания и оценки"
+    },
+    {
+      "id": "AAAAAAGiCd7+8G52Lj4=",
+      "name": "38. Обратное проектирование — изменения поиска"
+    },
+    {
+      "id": "AAAAAAGiCe6wdtq8JVE=",
+      "name": "39. Инфологическая модель — модели и параметры"
+    }
+  ]
+}
