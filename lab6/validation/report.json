@@ -1,15 +1,15 @@
 {
   "status": "passed",
-  "pdfPages": 36,
-  "pdfSHA256": "d7fa4c0682a3733ee9c0f1aeb8dd02b45ca68bc8655e93675bdbe61d1ee0dc32",
+  "pdfPages": 25,
+  "pdfSHA256": "270b825d0c055c3e973806890ece49d3d672b467e19f58492d361acb8fe4ce4d",
   "distributionMatchesBuild": true,
-  "renderedPages": 36,
+  "renderedPages": 25,
   "latexOverflows": 0,
   "unresolvedReferences": 0,
   "pythonSyntax": {
     "version": "3.13.11",
-    "files": 2,
+    "files": 45,
     "status": "passed"
   },
-  "visualReview": "All page contact sheets reviewed; corrected ER audio table page inspected separately."
+  "visualReview": "All 25 pages reviewed in contact sheets; trace diagram attributes inspected at full resolution."
 }

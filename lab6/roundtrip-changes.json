@@ -1,96 +1,15 @@
 {
-  "method": "Python ast -> JSON -> native StarUML UMLClass objects; separate imported package",
-  "class": "AudioSearchService",
+  "generator": "StarUML python:generate",
+  "reverse": "StarUML python:reverse",
   "changes": [
-    "add private limit: int",
-    "add public set_limit(limit: int) -> None",
-    "search gains limit: int",
-    "remove build_conditions() -> dict[str, str]"
-  ],
-  "before": {
-    "name": "AudioSearchService",
-    "attributes": [
-      {
-        "name": "description",
-        "type": "str",
-        "visibility": "private"
-      },
-      {
-        "name": "filters",
-        "type": "dict[str, str]",
-        "visibility": "private"
-      }
-    ],
-    "operations": [
-      {
-        "name": "search",
-        "parameters": [
-          {
-            "name": "description",
-            "type": "str"
-          },
-          {
-            "name": "filters",
-            "type": "dict[str, str]"
-          }
-        ],
-        "returns": "list[UUID]"
-      },
-      {
-        "name": "build_conditions",
-        "parameters": [],
-        "returns": "dict[str, str]"
-      }
-    ]
-  },
-  "after": {
-    "name": "AudioSearchService",
-    "attributes": [
-      {
-        "name": "limit",
-        "type": "int",
-        "visibility": "private"
-      },
-      {
-        "name": "description",
-        "type": "str",
-        "visibility": "private"
-      },
-      {
-        "name": "filters",
-        "type": "dict[str, str]",
-        "visibility": "private"
-      }
-    ],
-    "operations": [
-      {
-        "name": "search",
-        "parameters": [
-          {
-            "name": "description",
-            "type": "str"
-          },
-          {
-            "name": "filters",
-            "type": "dict[str, str]"
-          },
-          {
-            "name": "limit",
-            "type": "int"
-          }
-        ],
-        "returns": "list[UUID]"
-      },
-      {
-        "name": "set_limit",
-        "parameters": [
-          {
-            "name": "limit",
-            "type": "int"
-          }
-        ],
-        "returns": "None"
-      }
-    ]
-  }
+    {
+      "class": "AudioSearchService",
+      "addedAttribute": "limit: int = 20",
+      "addedOperation": "set_limit(limit: int)"
+    },
+    {
+      "class": "AudioAnalysisService",
+      "removedAttribute": "model_name"
+    }
+  ]
 }

@@ -70,12 +70,26 @@ def main():
     lab=next(x for x in new if x.get('name')=='06. Проектирование и инженерия')
     added=list(objects(lab))
     diagrams=sorted([x for x in added if x['_type'].endswith('Diagram')],key=lambda x:x['name'])
+    trace_views=[]
+    for diagram in diagrams:
+        if re.match(r'^(22|23|24|32|33)(?:\.| )',diagram['name']):
+            views=[x for x in objects(diagram) if x['_type']=='UMLClassView']
+            assert views, f'No classes in trace diagram: {diagram["name"]}'
+            for view in views:
+                # StarUML omits false-valued defaults when serializing views.
+                assert not view.get('suppressAttributes',False), f'Hidden attributes: {diagram["name"]}'
+                assert not view.get('suppressOperations',False), f'Hidden operations: {diagram["name"]}'
+            trace_views.extend(views)
     for d in diagrams:
         for suffix in ['png','svg','pdf']:
-            assert (LAB / 'diagrams' / (d['name'][:2]+'.'+suffix)).stat().st_size > 1000
+            code=re.match(r'^\d+(?:\.\d+)?',d['name'])[0]
+            assert (LAB / 'diagrams' / (code+'.'+suffix)).stat().st_size > 1000
     validation=json.loads((LAB/'validation/staruml-validation.json').read_text())
     assert not validation['errors']
-    assert json.loads((LAB/'validation/reverse-import.json').read_text())['verifiedAgainstPythonAST']
+    native_reverse=json.loads((LAB/'validation/native-reverse.json').read_text(encoding='utf-8'))
+    assert native_reverse['changesVerified'] and native_reverse['command']=='python:reverse'
+    generation=json.loads((LAB/'validation/native-generation.json').read_text(encoding='utf-8'))
+    assert generation['classes']==22 and 'python:generate' in generation['commands']
     assert json.loads((LAB/'validation/postgresql.json').read_text())['status']=='passed'
     assert (LAB/'docs/html/index.html').exists()
     # Remove orphaned pages from earlier exports, retaining all current object pages.
@@ -85,17 +99,25 @@ def main():
         for page in (LAB/'docs/html'/directory).iterdir():
             if page.is_file() and re.fullmatch('[0-9a-f]{32}',page.stem) and page.stem not in valid:
                 page.unlink()
+    for page in (LAB/'docs/html').rglob('*'):
+        if not page.is_file() or page.suffix not in {'.html','.css','.js'}:
+            continue
+        content=page.read_text(encoding='utf-8')
+        normalized='\n'.join(line.rstrip() for line in content.splitlines())+'\n'
+        if content!=normalized:
+            page.write_text(normalized,encoding='utf-8')
     native=json.loads((LAB/'statistics.json').read_text(encoding='utf-8'))
     stats={'counting':'Exact persisted _type values; views excluded. Packages and subsystems counted separately. Source copies of classes in distinct packages counted separately.',
            'source':count(old),'total':count(new),'lab6':count(added),
            'canonicalAnalysis':native['canonicalAnalysis'],
            'diagrams':[{'id':d['_id'],'name':d['name']} for d in diagrams]}
     (LAB/'statistics.json').write_text(json.dumps(stats,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    (LAB/'finish-status.txt').write_text(f"Final native StarUML model: {stats['lab6']['diagrams']} new diagrams, {stats['lab6']['tables']} tables, 7 imported Python classes. Native validation, AST comparison and PostgreSQL verification passed. SVG is exported by StarUML; PDF/PNG typesetting is recorded in diagrams/rendering.json.\n",encoding='utf-8')
+    (LAB/'finish-status.txt').write_text(f"StarUML native Python and DDL generation completed. {stats['lab6']['diagrams']} design diagrams, {stats['lab6']['tables']} tables, {native_reverse['classes']} reverse-engineered classes. Validation and PostgreSQL verification passed.\n",encoding='utf-8')
     result={'sourceSHA256':hashlib.sha256(source.read_bytes()).hexdigest(),
             'sourceIdentical':True,'originalObjectsPreserved':len(old),
             'originalDiagramsPreserved':len(original_diagrams),'unresolvedReferences':missing,
             'existingPropertyChanges':changes,'newDiagramExportsChecked':len(diagrams),
+            'traceClassViewsWithVisibleAttributes':len(trace_views),
             'status':'passed'}
     (LAB/'validation/artifact-audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'statistics':stats,'propertyChanges':len(changes)},ensure_ascii=False,indent=2))

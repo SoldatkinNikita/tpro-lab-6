@@ -1,17 +1,11 @@
 # ТРПО, лабораторная работа №6
 
-Прямое и обратное проектирование сервиса ARIA. Автор: Солдаткин Н.С., ИУ5-11М.
+Прямое и обратное проектирование ARIA. Солдаткин Н.С., ИУ5-11М.
 
-- [LaTeX-отчёт](main.tex), [основной текст](sections/06-design.tex), готовый PDF в `dist/`.
-- [Редактируемая модель StarUML](lab6/ARIA-Lab6.mdj).
-- [Результаты и воспроизведение](lab6/report.md).
-- [DDL PostgreSQL](lab6/sql/aria.sql), [проверки](lab6/validation/).
-- [HTML-документация модели](lab6/docs/html/index.html).
+- [LaTeX-отчёт](main.tex), [текст](sections/06-design.tex), PDF в `dist/`.
+- [Модель StarUML](lab6/ARIA-Lab6.mdj).
+- [Материалы и команды воспроизведения](lab6/report.md).
+- [DDL PostgreSQL](lab6/sql/aria.sql).
 
-Для сборки готового отчёта в Windows: `./scripts/build-report.ps1`.
-Альтернатива для среды с GNU Make, Bash и Docker: `make build`.
-Сборка отчёта использует сохранённые экспорты StarUML, повторная генерация
-модели для обычной правки текста не требуется.
-
-Файлы и PDF лабораторной №5 сохранены как исходные материалы;
-`main.tex` теперь собирает только отчёт лабораторной №6.
+Сборка отчёта: `./scripts/build-report.ps1`.
+Код и DDL получены стандартными расширениями Python и DDL StarUML.

@@ -1,0 +1,61 @@
+{
+  "command": "python:reverse",
+  "extension": "niklauslee.staruml-python 0.9.2",
+  "classes": 22,
+  "changesVerified": true,
+  "comparisons": [
+    {
+      "name": "AudioSearchService",
+      "before": {
+        "attributes": [
+          "description",
+          "filters"
+        ],
+        "operations": [
+          "search",
+          "build_conditions"
+        ]
+      },
+      "after": {
+        "attributes": [
+          "description",
+          "filters",
+          "limit"
+        ],
+        "operations": [
+          "__init__",
+          "search",
+          "build_conditions",
+          "set_limit"
+        ]
+      }
+    },
+    {
+      "name": "AudioAnalysisService",
+      "before": {
+        "attributes": [
+          "model_name",
+          "thresholds"
+        ],
+        "operations": [
+          "start",
+          "get_audio_file",
+          "extract_features",
+          "filter_scores"
+        ]
+      },
+      "after": {
+        "attributes": [
+          "thresholds"
+        ],
+        "operations": [
+          "__init__",
+          "start",
+          "get_audio_file",
+          "extract_features",
+          "filter_scores"
+        ]
+      }
+    }
+  ]
+}

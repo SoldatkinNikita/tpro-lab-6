@@ -1,0 +1,1 @@
+{"name":"aria.lab6-workflow","title":"ARIA laboratory workflow","version":"1.0.0","description":"Runs standard StarUML commands for the ARIA laboratory.","engines":{"staruml":">=6.0.0"}}

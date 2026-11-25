@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "standardModules": [
+    {
+      "extension": "python",
+      "module": "code-generator.js",
+      "sha256": "cb8ec10c551875a10a1096440742794a1f35b6aadfafa17dd60489c798fb2478",
+      "unmodified": true
+    },
+    {
+      "extension": "python",
+      "module": "code-analyzer.js",
+      "sha256": "09dcca804d7e4b2be2f4d4f8faa2670bfed247f446235b075ed557d91fd62bac",
+      "unmodified": true
+    },
+    {
+      "extension": "ddl",
+      "module": "ddl-generator.js",
+      "sha256": "6ac7a840b54eff2ad9643e46f64974dfb78a2b75155bcfb3eb6d8b4f64e1a21d",
+      "unmodified": true
+    }
+  ],
+  "generatedClasses": [
+    "AudioAnalysisForm",
+    "AudioAnalysisService",
+    "CatalogAnalysisForm",
+    "CatalogAnalysisService",
+    "AuthClient",
+    "AuthServiceAdapter",
+    "LoginForm",
+    "CatalogServiceEndpoint",
+    "ActiveJobsForm",
+    "AnalysisHistoryForm",
+    "AnalysisJobService",
+    "AnalysisResultForm",
+    "AnalysisResultService",
+    "AudioSearchForm",
+    "AudioSearchService",
+    "SearchButton",
+    "SearchDescriptionInput",
+    "SearchFiltersPanel",
+    "SearchResultsTable",
+    "AnalysisSettingsForm",
+    "AnalysisSettingsService",
+    "AudioStorageAdapter"
+  ],
+  "pythonCommand": "python:generate",
+  "reverseCommand": "python:reverse",
+  "ddlCommand": "ddl:generate"
+}

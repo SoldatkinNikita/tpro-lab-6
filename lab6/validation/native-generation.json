@@ -1,0 +1,44 @@
+{
+  "tool": "StarUML 7.1.1",
+  "commands": [
+    "python:generate",
+    "ddl:generate"
+  ],
+  "pythonExtension": "niklauslee.staruml-python 0.9.2",
+  "ddlExtension": "niklauslee.staruml-ddl 0.9.2",
+  "basePackages": [
+    "catalog",
+    "analysis",
+    "search",
+    "jobs",
+    "settings",
+    "audio",
+    "storage",
+    "auth"
+  ],
+  "classes": 22,
+  "files": [
+    "lab6\\generated\\python\\analysis\\audioAnalysisForm.py",
+    "lab6\\generated\\python\\analysis\\audioAnalysisService.py",
+    "lab6\\generated\\python\\analysis\\catalogAnalysisForm.py",
+    "lab6\\generated\\python\\analysis\\catalogAnalysisService.py",
+    "lab6\\generated\\python\\auth\\authClient.py",
+    "lab6\\generated\\python\\auth\\authServiceAdapter.py",
+    "lab6\\generated\\python\\auth\\loginForm.py",
+    "lab6\\generated\\python\\catalog\\catalogServiceEndpoint.py",
+    "lab6\\generated\\python\\jobs\\activeJobsForm.py",
+    "lab6\\generated\\python\\jobs\\analysisHistoryForm.py",
+    "lab6\\generated\\python\\jobs\\analysisJobService.py",
+    "lab6\\generated\\python\\jobs\\analysisResultForm.py",
+    "lab6\\generated\\python\\jobs\\analysisResultService.py",
+    "lab6\\generated\\python\\search\\audioSearchForm.py",
+    "lab6\\generated\\python\\search\\audioSearchService.py",
+    "lab6\\generated\\python\\search\\searchButton.py",
+    "lab6\\generated\\python\\search\\searchDescriptionInput.py",
+    "lab6\\generated\\python\\search\\searchFiltersPanel.py",
+    "lab6\\generated\\python\\search\\searchResultsTable.py",
+    "lab6\\generated\\python\\settings\\analysisSettingsForm.py",
+    "lab6\\generated\\python\\settings\\analysisSettingsService.py",
+    "lab6\\generated\\python\\storage\\audioStorageAdapter.py"
+  ]
+}

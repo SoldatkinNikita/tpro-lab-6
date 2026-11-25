@@ -70,6 +70,14 @@
     \caption{#2}\label{#3}
   \end{figure}
 }
+\newcommand{\reportDiagram}[3]{%
+  \begin{figure}[H]
+    \centering
+    \adjustbox{max width=\textwidth,max height=0.76\textheight}{%
+      \includegraphics{build/staruml/#1.pdf}}
+    \caption{#2}\label{#3}
+  \end{figure}
+}
 
 \DeclareCaptionLabelSeparator{hyphen}{ - }
 \captionsetup[figure]{

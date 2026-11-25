@@ -10,20 +10,20 @@
     "tables": 0
   },
   "total": {
-    "packages": 51,
+    "packages": 66,
     "subsystems": 8,
-    "diagrams": 39,
-    "umlClasses": 175,
-    "relationships": 446,
+    "diagrams": 56,
+    "umlClasses": 194,
+    "relationships": 451,
     "logicalEntities": 10,
     "tables": 12
   },
   "lab6": {
-    "packages": 8,
+    "packages": 23,
     "subsystems": 8,
-    "diagrams": 18,
-    "umlClasses": 35,
-    "relationships": 78,
+    "diagrams": 35,
+    "umlClasses": 54,
+    "relationships": 83,
     "logicalEntities": 10,
     "tables": 12
   },
@@ -38,12 +38,40 @@
       "name": "22. Граничные классы — формы"
     },
     {
+      "id": "AAAAAAGiE8d6Uem71qk=",
+      "name": "22.2 Граничные классы — формы"
+    },
+    {
+      "id": "AAAAAAGiE8d7MerHCP4=",
+      "name": "22.3 Граничные классы — формы"
+    },
+    {
+      "id": "AAAAAAGiE8d75uvTj1w=",
+      "name": "22.4 Граничные классы — формы"
+    },
+    {
       "id": "AAAAAAGiCd6tZHp7uOE=",
       "name": "23. Граничные классы — адаптеры"
     },
     {
+      "id": "AAAAAAGiE8d9K+4HyxA=",
+      "name": "23.2 Граничные классы — адаптеры"
+    },
+    {
       "id": "AAAAAAGiCd6uNXu/d24=",
       "name": "24. Управляющие классы — проектирование"
+    },
+    {
+      "id": "AAAAAAGiE8d+qvC7y5o=",
+      "name": "24.2 Управляющие классы — проектирование"
+    },
+    {
+      "id": "AAAAAAGiE8eABfG1Oss=",
+      "name": "24.3 Управляющие классы — проектирование"
+    },
+    {
+      "id": "AAAAAAGiE8eAxvKyWII=",
+      "name": "24.4 Управляющие классы — проектирование"
     },
     {
       "id": "AAAAAAGiCd6wAn8uIzU=",
@@ -78,8 +106,40 @@
       "name": "32. Сущности анализа — инфологическая модель"
     },
     {
+      "id": "AAAAAAGiE8eC9fYyPQA=",
+      "name": "32.2 Сущности анализа — инфологическая модель"
+    },
+    {
+      "id": "AAAAAAGiE8eDo/cOXnU=",
+      "name": "32.3 Сущности анализа — инфологическая модель"
+    },
+    {
+      "id": "AAAAAAGiE8eETff5knA=",
+      "name": "32.4 Сущности анализа — инфологическая модель"
+    },
+    {
+      "id": "AAAAAAGiE8eE9/jeeQA=",
+      "name": "32.5 Сущности анализа — инфологическая модель"
+    },
+    {
       "id": "AAAAAAGiCd7OSo+/nKo=",
       "name": "33. Инфологическая модель — таблицы"
+    },
+    {
+      "id": "AAAAAAGiE8eHF/wv/CQ=",
+      "name": "33.2 Инфологическая модель — таблицы"
+    },
+    {
+      "id": "AAAAAAGiE8eHq/zRels=",
+      "name": "33.3 Инфологическая модель — таблицы"
+    },
+    {
+      "id": "AAAAAAGiE8eIQP154zg=",
+      "name": "33.4 Инфологическая модель — таблицы"
+    },
+    {
+      "id": "AAAAAAGiE8eI1/4n2i8=",
+      "name": "33.5 Инфологическая модель — таблицы"
     },
     {
       "id": "AAAAAAGiCd7RFZOAuec=",
@@ -98,12 +158,20 @@
       "name": "37. Даталогическая модель — задания и оценки"
     },
     {
-      "id": "AAAAAAGiCd7+8G52Lj4=",
-      "name": "38. Обратное проектирование — изменения поиска"
+      "id": "AAAAAAGiE8o3i16ttD4=",
+      "name": "38. AudioSearchService после обратного проектирования"
     },
     {
       "id": "AAAAAAGiCe6wdtq8JVE=",
       "name": "39. Инфологическая модель — модели и параметры"
+    },
+    {
+      "id": "AAAAAAGiE8AYr1DTeIE=",
+      "name": "40. Форма поиска и элементы интерфейса"
+    },
+    {
+      "id": "AAAAAAGiE8o4RF8xyQk=",
+      "name": "41. AudioAnalysisService после обратного проектирования"
     }
   ]
 }

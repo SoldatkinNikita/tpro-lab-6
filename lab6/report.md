@@ -1,82 +1,40 @@
-# Лабораторная работа №6: прямое и обратное проектирование ARIA
+# Лабораторная работа №6
 
-Солдаткин Н.С., ИУ5-11М. Преподаватель: Виноградова М.В. Москва, 2026.
+Солдаткин Н.С., ИУ5-11М. Основной отчёт: `../main.tex`.
 
-Основной отчёт ведётся в LaTeX: `../main.tex`, `../sections/06-design.tex`.
-Собранный PDF находится в `../dist/` под названием лабораторной работы №6.
+- `ARIA-Lab6.mdj` — модель с трассировками и раскрытыми атрибутами и операциями.
+- `diagrams/` — экспорты диаграмм; `diagram-manifest.json` — перечень.
+- `generated/python/` — исходный результат команды StarUML `Tools > Python > Generate Code`.
+- `reverse-input/python/` — отдельная изменённая копия кода для `Tools > Python > Reverse Code`.
+- `sql/native.sql` — результат `Tools > DDL > Generate DDL`.
+- `sql/aria.sql` — DDL с дополнительными ограничениями PostgreSQL.
+- `docs/html/index.html` — сгенерированная документация.
+- `validation/` — проверки нативной генерации, обратного проектирования, модели и SQL.
+- `statistics.json` — статистика модели.
 
-Рабочая модель: [ARIA-Lab6.mdj](ARIA-Lab6.mdj).
-Исходная копия в `source/` побайтно совпадает с предоставленной моделью.
-Все исходные элементы, их свойства и 21 диаграмма сохранены.
-
-Результаты:
-
-- 18 новых диаграмм StarUML в `diagrams/`: трассировки 11 граничных классов,
-  7 управляющих классов, 8 пакетов и 10 сущностей; проектные классы,
-  инфологическая и даталогическая модели, размещение и структура БД,
-  зависимости подсистем и результат обратного проектирования.
-- 8 подсистем, 18 проектных классов (11 форм/адаптеров и 7 сервисов).
-- 10 инфологических сущностей и 12 таблиц PostgreSQL.
-- `generated/aria_design.py`: каркас 7 сервисов, созданный EJS-генератором StarUML.
-- `reverse-input/aria_design.py`: отдельная изменённая копия. В `AudioSearchService`
-  добавлены атрибут `limit` и операция `set_limit`, изменена сигнатура `search`,
-  удалена `build_conditions`. Результат AST-импорта находится в отдельном пакете MDJ.
-- `roundtrip-changes.json` и `roundtrip.diff`: сравнение версий.
-- `sql/aria.sql`: DDL, сформированный из ER-элементов пользовательским сценарием.
-- `sql/verify.sql`: проверка ограничений в изолированном PostgreSQL.
-- `docs/html/index.html`: штатная HTML-документация StarUML;
-  `docs/documentation-example.png`: снимок страницы документации.
-- `validation/`: встроенная UML-валидация, сравнение Python AST с импортом,
-  проверка сохранённого MDJ, журнал PostgreSQL и итоговые результаты.
-- `statistics.json`: точная статистика по типам сохранённых объектов модели.
-
-Проверки завершены успешно: StarUML не выдал ошибок; все ссылки MDJ разрешаются;
-импорт совпадает с AST; Python-каркасы компилируются. PostgreSQL 18.1 создал
-12 таблиц; проверены корректные данные, соединения и каскадное удаление,
-18 ожидаемых отказов ограничений и обязательные связи 1:1 отложенными FK.
-Тестовый кластер остановлен, существующие БД не использовались.
-
-## Способ выполнения и ограничения
-
-Диаграммы созданы и сохранены внутри StarUML 7.1.1 через его Factory/Engine API,
-вызванный штатной командой `ejs`. SVG-изображения экспортированы самим StarUML.
-PDF получены отображением этих SVG в Chromium, PNG — рендерингом PDF
-в Ghostscript: это устраняет пропадание частей рамок штатного PNG-экспорта.
-Внешние сервисы Catalog Service и Auth Service в ARIA не включены: подсистемы
-интеграции содержат только адаптеры. В `principal` сохраняется проекция
-внешнего пользователя; паролей в БД нет.
-
-Python 3 и PostgreSQL выбраны для данной работы: исходная модель их не задаёт.
-Правила трассировки, структура БД, дополнительные SQL-ограничения и шаблоны
-генерации разработаны вручную. Разбор Python AST выполнен внешним скриптом,
-его результат импортирован средствами API StarUML. Это пользовательский
-структурный импорт в отдельный пакет, а не штатная синхронизация Python.
-Каркасы содержат `NotImplementedError` и не реализуют алгоритмы ARIA.
-
-Профиль языка, трансформации БД, SQL-генератор, проверка репозитория и шаблон
-Database Builder Enterprise Architect не использовались. Установленные
-средства StarUML не подменяются названиями функций Enterprise Architect.
-Документация, UML-валидация и экспорт диаграмм выполнены штатными средствами StarUML.
+В `AudioSearchService` добавлены атрибут `limit` и метод `set_limit`.
+В `AudioAnalysisService` удалён атрибут `model_name`.
+Изменения отражены результатом штатного обратного проектирования.
 
 ## Воспроизведение
 
-Из корня репозитория в PowerShell:
+В StarUML установлены стандартные расширения [Python](https://github.com/niklauslee/staruml-python)
+и [DDL](https://github.com/niklauslee/staruml-ddl), версия 0.9.2.
+Сценарий `native-workflow.cjs` управляет элементами модели и вызывает команды
+этих расширений; собственных генераторов кода и собственного Python-импорта нет.
 
 ```powershell
-.\scripts\staruml.ps1 -Action build
-python scripts/reverse_python.py
-.\scripts\staruml.ps1 -Action finish
+.\scripts\run-native.ps1 -Phase prepare
+python scripts/prepare_native_reverse.py
+python scripts/complete_native_ddl.py
+.\scripts\run-native.ps1 -Phase reverse
+python scripts/write_short_report.py
 python scripts/check_database.py
-python scripts/audit_artifacts.py
 python scripts/capture_documentation.py
-python scripts/render_diagram_vectors.py
 .\scripts\build-report.ps1
+python scripts/audit_artifacts.py
 python scripts/check_report.py
 ```
 
-Требуются установленный StarUML 7.1.1, Python 3.13, PostgreSQL 18,
-Chrome/Edge для снимка документации, Docker с локальным образом
-`texlive/texlive:latest`. Пути приложений задаются в сценариях.
-StarUML обрабатывает рабочую копию; исходник вне репозитория не изменяет.
-Проверка БД создаёт отдельный кластер в `build/`, использует свободный
-локальный порт и останавливает только созданный ею сервер.
+Исходная модель сохранена в `source/`; материалы заменённого варианта находятся
+в служебном каталоге `../build/revision-before-native/`.

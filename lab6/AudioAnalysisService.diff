@@ -1,0 +1,14 @@
+--- generated\python\analysis\AudioAnalysisService.py
++++ reverse-input\python\analysis\AudioAnalysisService.py
+@@ -1,10 +1,7 @@
+-#!/usr/bin/env python3
+-# -*- coding: utf-8 -*-
+-
+ class AudioAnalysisService:
+     """Класс AudioAnalysisService подсистемы Анализ аудиозаписей."""
++
+     def __init__(self):
+-        self.model_name = None
+         self.thresholds = None
+ 
+     def start(self, audio_id):
